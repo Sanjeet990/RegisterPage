@@ -30,8 +30,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		$errorx = $postdata['success'];
 		$savedmsg = $postdata['response'];
 
-		$msgtype = "success";
-		$msg = $providerinfo['successtext'];
+		if($savedmsg == "done"){
+			$msgtype = "success";
+			$msg = $providerinfo['successtext'];
+		}else{
+			$msgtype = "danger";
+			$msg = $savedmsg;
+		}
 	}else{
 		$msgtype = "danger";
 		foreach($error as $e){
