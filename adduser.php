@@ -16,12 +16,20 @@ $msgtype = "";
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	
 	$fname = $_POST['fname'] or $error[] = "First name should not be empty.";
-	$lname = $_POST['lname'] or $error[] = "Last name should not be empty.";
+	$lname = $_POST['lname'] or $lname = "";
 	$email = $_POST['email'] or $error[] = "Email id should not be empty.";
 	$mobile = $_POST['mobile'] or $error[] = "Mobile number should not be empty.";
 	$dob = $_POST['dob'] or $dob = "";
 	
 	if(!$error){
+		$name = $fname." ".$lname;
+		$request = "provider=".$username."&uname=".$name."&mob=".$mobile."&mail=".$email."&dob=".$dob;
+		
+		$get_datax = GetDataFromAPI('POST', "https://grahakplus.com/api/savedetailsfromprovider.php", $request);
+		$postdata = json_decode($get_datax, true);
+		$errorx = $postdata['success'];
+		$savedmsg = $postdata['response'];
+
 		$msgtype = "success";
 		$msg = $providerinfo['successtext'];
 	}else{
@@ -64,7 +72,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		
 		<?if($msg){?>
 		<div class="alert alert-dismissible alert-<?=$msgtype;?>">
-		  <button type="button" class="close" data-dismiss="alert">&times;</button>
 		  <?=$msg;?>
 		</div>
 		<?}?>
