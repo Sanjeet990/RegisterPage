@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="<?=$providerinfo['logourl'];?>" alt="" height="72">
         <h2>Register for <?=$providerinfo['companyname'];?></h2>
-        <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+        <p class="lead"><?=$providerinfo['subtext'];?></p>
       </div>
 
       <div class="row">
