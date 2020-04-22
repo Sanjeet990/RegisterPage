@@ -9,9 +9,11 @@ $response = json_decode($get_data, true);
 $errors = $response['success'];
 $providerinfo = $response['response'];
 
+$error = array();
+$msg = "";
+$msgtype = "";
+	
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-	$error = array();
-	$msg = "";
 	
 	$fname = $_POST['fname'] or $error[] = "First name should not be empty.";
 	$lname = $_POST['lname'] or $error[] = "Last name should not be empty.";
@@ -20,8 +22,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$dob = $_POST['dob'] or $dob = "";
 	
 	if(!$error){
+		$msgtype = "success";
 		$msg = $providerinfo['successtext'];
 	}else{
+		$msgtype = "danger";
 		foreach($error as $e){
 			$msg .= $e."<br />";
 		}
@@ -57,6 +61,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
       <div class="row">
         <div class="col-md-12 order-md-1">
+		
+		<?if($msg){?>
+		<div class="alert alert-dismissible alert-<?=$msgtype;?>">
+		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		  <?=msg;?>
+		</div>
+		<?}?>
+		
           <h4 class="mb-3"><?=$providerinfo['regtext'];?></h4>
           <form action="" method="post" class="needs-validation" novalidate>
             <div class="row">
