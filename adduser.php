@@ -10,9 +10,22 @@ $errors = $response['success'];
 $providerinfo = $response['response'];
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
+	$error = array();
+	$msg = "";
 	
+	$fname = $_POST['fname'] or $error[] = "First name should not be empty.";
+	$lname = $_POST['lname'] or $error[] = "Last name should not be empty.";
+	$email = $_POST['email'] or $error[] = "Email id should not be empty.";
+	$mobile = $_POST['mobile'] or $error[] = "Mobile number should not be empty.";
+	$dob = $_POST['dob'] or $dob = "";
 	
-	
+	if(!$error){
+		$msg = $providerinfo['successtext'];
+	}else{
+		foreach($error as $e){
+			$msg .= $e."<br />";
+		}
+	}
 }
 
 ?>
