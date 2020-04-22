@@ -120,7 +120,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Date of Birth</label>
-                <input type="text" name="dob" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control datepicker" id="lastName" placeholder="" value="" readonly>
+                <input type="text" name="dob" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control datepicker" id="datepicker" placeholder="" value="">
               </div>
             </div>
 
@@ -147,7 +147,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
         'use strict';
-		$('.datepicker').pickadate();
+		$('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
         window.addEventListener('load', function() {
           // Fetch all the forms we want to apply custom Bootstrap validation styles to
           var forms = document.getElementsByClassName('needs-validation');
