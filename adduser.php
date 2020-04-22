@@ -45,18 +45,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3"><?=$providerinfo['regtext'];?></h4>
-          <form class="needs-validation" novalidate>
+          <form action="" method="post" class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <input type="text" name="fname" class="form-control" id="firstName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="text" name="lname" class="form-control" id="lastName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -65,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
             <div class="mb-3">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+              <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com" required>
               <div class="invalid-feedback">
                 Please enter a valid email address.
               </div>
@@ -74,14 +74,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">Mobile No.</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <input type="text" name="mobile" class="form-control" id="firstName" pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid mobile number is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Date of Birth</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="">
+                <input type="text" name="dob" class="form-control" id="lastName" placeholder="" value="">
               </div>
             </div>
 
