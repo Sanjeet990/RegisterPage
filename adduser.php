@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
       <div class="row">
         <div class="col-md-12 order-md-1">
-          <h4 class="mb-3">Billing address</h4>
+          <h4 class="mb-3"><?=$providerinfo['regtext'];?></h4>
           <form class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
@@ -64,21 +64,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             </div>
 
             <div class="mb-3">
-              <label for="username">Username</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">@</span>
-                </div>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
-                <div class="invalid-feedback" style="width: 100%;">
-                  Your username is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="email">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
               <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
