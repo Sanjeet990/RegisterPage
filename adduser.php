@@ -6,8 +6,10 @@ $username = $_GET['c'] or header("LOCATION: index.php");
 
 $get_data = GetDataFromAPI('GET', "https://grahakplus.com/api/provider.php?username=$username", false);
 $response = json_decode($get_data, true);
-$errors = $response['success'];
+$success = $response['success'];
 $providerinfo = $response['response'];
+
+if($success == false) header("LOCATION: index.php");
 
 $error = array();
 $msg = "";
