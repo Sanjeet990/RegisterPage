@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
               <label for="email">Email</label>
               <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
               <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
+                Please enter a valid email address.
               </div>
             </div>
 
@@ -76,15 +76,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 <label for="firstName">Mobile No.</label>
                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                 <div class="invalid-feedback">
-                  Valid first name is required.
+                  Valid mobile number is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Date of Birth</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="">
               </div>
             </div>
 
