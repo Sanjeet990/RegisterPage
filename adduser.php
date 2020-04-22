@@ -122,7 +122,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Date of Birth</label>
-                <input type="text" name="dob" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control datepicker" id="datepicker" placeholder="" value="">
+                <input type="text" name="dob" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control datepicker" id="datepicker" placeholder="" value="" readonly>
               </div>
             </div>
 
@@ -142,9 +142,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 	
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script>
