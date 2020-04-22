@@ -30,6 +30,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		$errorx = $postdata['success'];
 		$savedmsg = $postdata['response'];
 
+print_R($savedmsg);
+die();
 		if($savedmsg == "done"){
 			$msgtype = "success";
 			$msg = $providerinfo['successtext'];
