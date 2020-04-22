@@ -65,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		<?if($msg){?>
 		<div class="alert alert-dismissible alert-<?=$msgtype;?>">
 		  <button type="button" class="close" data-dismiss="alert">&times;</button>
-		  <?=msg;?>
+		  <?=$msg;?>
 		</div>
 		<?}?>
 		
