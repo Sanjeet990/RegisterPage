@@ -111,7 +111,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">Mobile No.</label>
-                <input type="text" name="mobile" class="form-control" id="firstName" pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$" placeholder="" value="" required>
+                <input type="text" name="mobile" class="form-control" id="firstName" pattern="^([+][9][1]|[9][1]|[0]){0,1}([7-9]{1})([0-9]{9})$" maxlength="10" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid mobile number is required.
                 </div>
